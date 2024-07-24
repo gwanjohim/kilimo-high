@@ -1,9 +1,28 @@
+using KilmoniCloud.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<ApplicationDBContext>(options =>
+{
+    options.UseSqlServer(
+        "Host=localhost;Database=KilimoniCloud;User name=sa;Password=333mP$203;TrustServerCertificate=true");
+});
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+var scope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
+
+var applicationDb = scope.ServiceProvider.GetRequiredService<ApplicationDBContext>();
+applicationDb.Database.EnsureCreated();
+
+
+
+        
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
