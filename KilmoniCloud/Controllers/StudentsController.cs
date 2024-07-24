@@ -59,14 +59,14 @@ namespace KilmoniCloud.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Age,GuardianContact,FormStreamId")] Student student)
         {
-            if (ModelState.IsValid)
-            {
+            // if (ModelState.IsValid)
+            // {
                 student.Id = Guid.NewGuid();
                 _context.Add(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            }
-            return View(student);
+            // }
+            // return View(student);
         }
 
         // GET: Students/Edit/5
