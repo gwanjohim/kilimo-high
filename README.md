@@ -1,6 +1,47 @@
 # KILIMO HIGH - GEORGE WANJOHI
 
 
+## Application Particulars
+
+1. The application is built on the latest version of ASP.NET core 8
+2. I am using Microsoft SQL Server
+3. I am using the Code First Approach in creating the database
+
+NOTE: There are no migrations to run. When you spin up the application the first time, it created the database and populates the tables with some seed data.
+
+The Model/Entity Classes are as follows
+
+To represent a Stream
+```c#
+public class FormStream
+{
+    public Guid FormStreamId { get; set; }
+    public string Name { get; set; }
+}
+```
+
+
+To represent a Student
+```c#
+public class Student
+{
+    public Guid Id { get; set; }
+    [MaxLength(200)] [Required] public string Name { get; set; }
+    [Required] public int Age { get; set; }
+
+    [Display(Name = "Guardian Contact")]
+    [MaxLength(200)]
+    [Required]
+    public string GuardianContact { get; set; }
+    public virtual FormStream? FormStream { get; set; }
+    [Required()] public Guid FormStreamId { get; set; }
+}
+```
+
+
+
+
+
 ## How to Run the Application
 
 Open appsettings.json, change the value of _KilimoDBConnection_ connection string with an appropriate connection string that points to your MSSQL Server database instance.
@@ -21,6 +62,11 @@ Note that the name of the database supplied therein must not be EXISTING already
     "KilimoDBConnection": "Data Source=localhost;Initial Catalog=KilimoniCloud4;Persist Security Info=True;User ID=sa;Password=303mP$203;MultipleActiveResultSets=True;TrustServerCertificate=True"
   }
 }
+
+
+To Spin up the application,
+
+
 
 ```
 The Generated database will look as follows
