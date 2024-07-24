@@ -68,3 +68,45 @@ go
 
 
 ```
+
+## Home Page
+
+The homepage is as follows
+
+![Home Page](site-pics/home.png)
+
+To Create/ Capture Streams, click **Create Stream** Link
+
+To View all Class Streams, Click **View All Streams**
+
+To View A single stream, Cick **View All Streams** then on the page that follows, click **Details** link to see stream particulars
+
+To Capture students data, click **Add New Student** You will be directed to the following page
+
+
+
+![Home Page](site-pics/addNewStudent.png)
+
+
+
+
+## Student related actions such as Edit, Delete and Viewing a single Students Data can be obtained from going to **View all Students** list and interacting with the actions that are attached to each student row item 
+
+
+![Home Page](site-pics/ViewAllStudents.png)
+
+
+## To view students that belong to a particular stream
+
+Click **View Students per Stream** link on the main page, You will be navigated to the following page
+
+![Home Page](site-pics/viewStudentsInStream.png)
+
+From here, click on a stream to a list of students that belong to that particulr stream.
+
+
+
+## CLosing Remarks
+
+
+Thank you for the opportunity to interview with Fintech Group.  
