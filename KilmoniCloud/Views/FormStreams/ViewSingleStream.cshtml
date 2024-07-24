@@ -5,16 +5,16 @@
     Layout = "_Layout";
 }
 
-<h2>View Single Stream Students</h2>
-
+<h2>View all Students in each Stream</h2>
+<hr/>
 
 <div class="d-flex justify-content-between flex-column">
 
 
     @foreach (var stream in Model)
     {
-        <div>
-            <a asp-controller="FormStreams" asp-action="RequestSingleStreamStudents" asp-route-StreamId="@stream.FormStreamId">@stream.Name</a>
+        <div class="m-2">
+            <a class="btn btn-outline-primary" asp-controller="FormStreams" asp-action="RequestSingleStreamStudents" asp-route-StreamId="@stream.FormStreamId">@stream.Name</a>
         </div>
     }
 

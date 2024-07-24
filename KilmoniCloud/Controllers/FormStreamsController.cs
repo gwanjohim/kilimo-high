@@ -37,6 +37,11 @@ namespace KilmoniCloud.Controllers
                 .Include(x => x.FormStream)
                 .Where(x => x.FormStreamId == StreamId).ToListAsync();
 
+            var stream = _context.FormStreams.FirstOrDefault(x => x.FormStreamId == StreamId);
+
+            var streamName = stream.Name;
+            ViewBag.StreamName = streamName;
+            
             return View(students);
         }
 

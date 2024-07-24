@@ -5,10 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>@ViewBag.StreamName</h1>
+
+<div class="form-text">Showing @Model.Count() students</div>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New Student</a>
 </p>
 <table class="table">
     <thead>
