@@ -1,7 +1,7 @@
 namespace KilmoniCloud.Data;
 
-public class ClassStream
+public class FormStream
 {
-    public Guid StreamId { get; set; }
+    public Guid FormStreamId { get; set; }
     public string Name { get; set; }
 }

@@ -7,38 +7,38 @@ public static class InitializeDatabase
     public static void Init(ApplicationDBContext context)
     {
         ///-------------------form 1 A
-        var form1a = new ClassStream()
+        var form1a = new FormStream()
         {
-            ClassStreamId = Guid.NewGuid(),
+            FormStreamId = Guid.NewGuid(),
             Name = "Form 1A"
         };
 
 
-        context.ClassStreams.Add(form1a);
+        context.FormStreams.Add(form1a);
         context.SaveChanges();
 
 
         ///-------------------form 1 A
-        var form1b = new ClassStream()
+        var form1b = new FormStream()
         {
-            ClassStreamId = Guid.NewGuid(),
+            FormStreamId = Guid.NewGuid(),
             Name = "Form 1B"
         };
 
 
-        context.ClassStreams.Add(form1b);
+        context.FormStreams.Add(form1b);
         context.SaveChanges();
 
 
         ///-------------------form 1 A
-        var form1c = new ClassStream()
+        var form1c = new FormStream()
         {
-            ClassStreamId = Guid.NewGuid(),
+            FormStreamId = Guid.NewGuid(),
             Name = "Form 1B"
         };
 
 
-        context.ClassStreams.Add(form1c);
+        context.FormStreams.Add(form1c);
         context.SaveChanges();
 
         for (int i = 0; i < 100; i++)
@@ -60,7 +60,7 @@ public static class InitializeDatabase
             {
                 Name = $"Student {i}",
                 Age = 14,
-                ClassStream = stream,
+                FormStream = stream,
                 Id = Guid.NewGuid(),
                 GuardianContact = (phoneNumber + (i * 30)).ToString()
             };

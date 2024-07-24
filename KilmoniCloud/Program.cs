@@ -1,3 +1,4 @@
+using KilmoniCloud;
 using KilmoniCloud.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
 {
     options.UseSqlServer(
-        "Host=localhost;Database=KilimoniCloud;User name=sa;Password=333mP$203;TrustServerCertificate=true");
+        "Data Source=localhost;Initial Catalog=KilimoniCloud2;Persist Security Info=True;User ID=sa;Password=303mP$203;MultipleActiveResultSets=True;TrustServerCertificate=True");
 });
 
 
@@ -21,8 +22,8 @@ var applicationDb = scope.ServiceProvider.GetRequiredService<ApplicationDBContex
 applicationDb.Database.EnsureCreated();
 
 
+InitializeDatabase.Init(applicationDb);
 
-        
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

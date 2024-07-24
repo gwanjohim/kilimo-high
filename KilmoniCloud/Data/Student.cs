@@ -8,6 +8,5 @@ public class Student
     public string Name { get; set; }
     public int Age { get; set; }
     public string GuardianContact { get; set; }
-    public ClassStream ClassStream { get; set; }
-    public Guid ClassStreamId { get; set; }
+    public FormStream FormStream { get; set; }
 }
