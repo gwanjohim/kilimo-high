@@ -24,6 +24,22 @@ namespace KilmoniCloud.Controllers
             return View(await _context.FormStreams.ToListAsync());
         }
 
+
+        public async Task<IActionResult> ViewSingleStream()
+        {
+            var streams = _context.FormStreams.ToList();
+            return View(streams);
+        }
+
+        public async Task<IActionResult> RequestSingleStreamStudents(Guid StreamId)
+        {
+            var students = await _context.Students
+                .Include(x => x.FormStream)
+                .Where(x => x.FormStreamId == StreamId).ToListAsync();
+
+            return View(students);
+        }
+
         // GET: FormStreams/Details/5
         public async Task<IActionResult> Details(Guid? id)
         {
@@ -62,6 +78,7 @@ namespace KilmoniCloud.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(formStream);
         }
 
@@ -78,6 +95,7 @@ namespace KilmoniCloud.Controllers
             {
                 return NotFound();
             }
+
             return View(formStream);
         }
 
@@ -111,8 +129,10 @@ namespace KilmoniCloud.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(formStream);
         }
 

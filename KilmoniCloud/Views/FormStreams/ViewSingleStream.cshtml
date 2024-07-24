@@ -1,0 +1,18 @@
+@model System.Collections.Generic.List<KilmoniCloud.Data.FormStream>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>View Single Stream Students</h2>
+
+
+<div>
+
+    @foreach (var stream in Model)
+    {
+        <a asp-controller="FormStreams" asp-action="RequestSingleStreamStudents" asp-route-StreamId="@stream.FormStreamId">@stream.Name</a>
+    }
+
+</div>
