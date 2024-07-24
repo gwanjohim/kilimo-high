@@ -3,6 +3,34 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to Kilimoni High</h1>
+
+    <hr/>
+
+    <div class="display-6">Streams </div>
+
+    <hr/>
+    <div class="d-flex justify-content-between">
+        <div>
+            <a class="btn btn-primary btn-lg" asp-controller="FormStreams" asp-action="Create">Create Stream</a>
+        </div>
+
+        <div>
+            <a class="btn btn-primary btn-lg" asp-controller="FormStreams" asp-action="Index">View All Streams</a>
+        </div>
+    </div>
+
+    <div class="display-6">STUDENTS </div>
+
+    <hr/>
+    <div class="d-flex justify-content-between">
+        <div>
+            <a class="btn btn-primary btn-lg" asp-controller="Students" asp-action="Create">ADD New Student</a>
+        </div>
+
+        <div>
+            <a class="btn btn-primary btn-lg" asp-controller="Students" asp-action="Index">View All Students</a>
+        </div>
+    </div>
+
 </div>
