@@ -21,7 +21,9 @@ namespace KilmoniCloud.Controllers
         // GET: Students
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Students.ToListAsync());
+            return View(await _context.Students
+                .Include(x => x.FormStream)
+                .ToListAsync());
         }
 
         // GET: Students/Details/5
@@ -43,8 +45,10 @@ namespace KilmoniCloud.Controllers
         }
 
         // GET: Students/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            ViewData["FormStreamId"] =
+                new SelectList(await _context.FormStreams.ToListAsync(), "FormStreamId", "Name");
             return View();
         }
 
@@ -53,7 +57,7 @@ namespace KilmoniCloud.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Age,GuardianContact")] Student student)
+        public async Task<IActionResult> Create([Bind("Id,Name,Age,GuardianContact,FormStreamId")] Student student)
         {
             if (ModelState.IsValid)
             {

@@ -18,13 +18,13 @@ builder.Services.AddRazorPages()
 
 var app = builder.Build();
 
-var scope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
-
-var applicationDb = scope.ServiceProvider.GetRequiredService<ApplicationDBContext>();
-applicationDb.Database.EnsureCreated();
-
-
-InitializeDatabase.Init(applicationDb);
+// var scope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
+//
+// var applicationDb = scope.ServiceProvider.GetRequiredService<ApplicationDBContext>();
+// applicationDb.Database.EnsureCreated();
+//
+//
+// InitializeDatabase.Init(applicationDb);
 
 
 // Configure the HTTP request pipeline.
