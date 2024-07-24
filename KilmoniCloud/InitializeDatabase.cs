@@ -9,7 +9,7 @@ public static class InitializeDatabase
         ///-------------------form 1 A
         var form1a = new ClassStream()
         {
-            StreamId = Guid.NewGuid(),
+            ClassStreamId = Guid.NewGuid(),
             Name = "Form 1A"
         };
 
@@ -21,7 +21,7 @@ public static class InitializeDatabase
         ///-------------------form 1 A
         var form1b = new ClassStream()
         {
-            StreamId = Guid.NewGuid(),
+            ClassStreamId = Guid.NewGuid(),
             Name = "Form 1B"
         };
 
@@ -33,7 +33,7 @@ public static class InitializeDatabase
         ///-------------------form 1 A
         var form1c = new ClassStream()
         {
-            StreamId = Guid.NewGuid(),
+            ClassStreamId = Guid.NewGuid(),
             Name = "Form 1B"
         };
 
