@@ -3,7 +3,7 @@
 
 ## Application Particulars
 
-1. The application is built on the latest version of ASP.NET core 8
+1. The application is built on the latest version of [ASP.NET core 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 2. I am using Microsoft SQL Server
 3. I am using the Code First Approach in creating the database
 
@@ -63,12 +63,16 @@ Note that the name of the database supplied therein must not be EXISTING already
   }
 }
 
-
-To Spin up the application,
-
-
-
 ```
+
+To Spin up the application, Navigate to **KilimoniCloud** folder, run the following command
+
+```bash
+> dotnet run
+```
+
+
+
 The Generated database will look as follows
 
 
