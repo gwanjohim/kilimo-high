@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KilmoniCloud", "KilmoniCloud\KilmoniCloud.csproj", "{F1372A52-EA3A-4C90-8C8B-69C3FED01A7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KilimoCloud", "KilimoCloud\KilimoCloud.csproj", "{F1372A52-EA3A-4C90-8C8B-69C3FED01A7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
