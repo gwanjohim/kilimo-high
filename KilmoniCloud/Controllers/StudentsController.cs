@@ -59,14 +59,14 @@ namespace KilmoniCloud.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Age,GuardianContact,FormStreamId")] Student student)
         {
-            // if (ModelState.IsValid)
-            // {
+            if (ModelState.IsValid)
+            {
                 student.Id = Guid.NewGuid();
                 _context.Add(student);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
-            // }
-            // return View(student);
+            }
+            return View(student);
         }
 
         // GET: Students/Edit/5
@@ -82,6 +82,9 @@ namespace KilmoniCloud.Controllers
             {
                 return NotFound();
             }
+            
+            ViewData["FormStreamId"] =
+                new SelectList(await _context.FormStreams.ToListAsync(), "FormStreamId", "Name");
             return View(student);
         }
 
@@ -90,7 +93,7 @@ namespace KilmoniCloud.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Age,GuardianContact")] Student student)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Name,Age,GuardianContact,FormStreamId")] Student student)
         {
             if (id != student.Id)
             {

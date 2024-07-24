@@ -5,9 +5,13 @@ namespace KilmoniCloud.Data;
 public class Student
 {
     public Guid Id { get; set; }
-    public string Name { get; set; }
-    public int Age { get; set; }
+    [MaxLength(200)] [Required] public string Name { get; set; }
+    [Required] public int Age { get; set; }
+
+    [Display(Name = "Guardian Contact")]
+    [MaxLength(200)]
+    [Required]
     public string GuardianContact { get; set; }
-    public virtual FormStream FormStream { get; set; }
-    public Guid FormStreamId { get; set; }
+    public virtual FormStream? FormStream { get; set; }
+    [Required()] public Guid FormStreamId { get; set; }
 }
