@@ -1,11 +1,6 @@
-namespace KilmoniCloud.Data;
+using System.ComponentModel.DataAnnotations;
 
-public enum ClassStream
-{
-    Form1A,
-    Form1B,
-    Form1C
-}
+namespace KilmoniCloud.Data;
 
 public class Student
 {
@@ -13,6 +8,6 @@ public class Student
     public string Name { get; set; }
     public int Age { get; set; }
     public string GuardianContact { get; set; }
-
     public ClassStream ClassStream { get; set; }
+    public Guid ClassStreamId { get; set; }
 }
